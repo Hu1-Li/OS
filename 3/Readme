@@ -1,0 +1,9 @@
+insmod 3.ko
+mknod /dev/3 c 60 0
+chmod 666 /dev/3
+echo -n abcdef >/dev/3
+cat /dev/3
+cat /proc/devices
+cat /var/log/syslog | grep memory-module
+rmmod 3
+rm /dev/3
